@@ -1,14 +1,15 @@
+/* global module: true */
 module.exports = function (grunt) {
-    grunt.initConfig({
-      csslint: {
-        options: {
-          csslintrc: '.csslintrc'
-        },
-        src: ['*.css']
-      }
-    });
-  
-    grunt.loadNpmTasks('grunt-contrib-csslint');
-  
-    grunt.registerTask('default', ['csslint']);
-  };
+  grunt.initConfig({
+    eslint: {
+      options: {
+        eslintrc: './.eslintrc.json'
+      },
+      src: ['*.js']
+    }
+  });
+
+  grunt.loadNpmTasks('grunt-eslint');
+
+  grunt.registerTask('default', ['eslint']);
+};
